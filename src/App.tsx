@@ -1,38 +1,38 @@
-import * as React from "react"
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from "@chakra-ui/react"
+import { Box, Container, Divider, Heading, HStack, Text, VStack } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { Logo } from "./Logo"
+import Example1 from "./examples/Example1"
+import Example2 from "./examples/Example2"
+import Example3 from "./examples/Example3"
 
-export const App = () => (
-  <ChakraProvider theme={theme}>
-    <Box textAlign="center" fontSize="xl">
-      <Grid minH="100vh" p={3}>
-        <ColorModeSwitcher justifySelf="flex-end" />
-        <VStack spacing={8}>
-          <Logo h="40vmin" pointerEvents="none" />
-          <Text>
-            Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
-          </Text>
-          <Link
-            color="teal.500"
-            href="https://chakra-ui.com"
-            fontSize="2xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Chakra
-          </Link>
+export const App = () => {
+  return (
+    <>
+      <ColorModeSwitcher />
+      <Container mt='10'>
+        <Heading>React Audio 📢</Heading>
+
+        <VStack mt='10' spacing='5' alignItems={'flex-start'} >
+
+          <Box p='5' border='1px solid' borderColor='gray.300' borderRadius={'2xl'} w='100%' >
+
+            <Text fontSize={'2xl'} mb='5'>Example 1</Text>
+            <Example1 />
+          </Box>
+
+          <Box p='5' border='1px solid' borderColor='gray.300' borderRadius={'2xl'} w='100%' >
+            <Text fontSize={'2xl'} mb='5'>Example 2</Text>
+
+            <Example2 />
+          </Box>
+
+          <Box p='5' border='1px solid' borderColor='gray.300' borderRadius={'2xl'} w='100%' >
+            <Text fontSize={'2xl'} mb='5'>Example 3</Text>
+
+            <Example3 />
+          </Box>
+
         </VStack>
-      </Grid>
-    </Box>
-  </ChakraProvider>
-)
+      </Container>
+    </>
+  )
+}
